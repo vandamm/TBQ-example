@@ -1,0 +1,29 @@
+{
+  "name": "tbq-console",
+  "version": "0.0.1",
+  "description": "Run TBQ quests in console",
+  "main": "index.js",
+  "scripts": {
+    "browser": "node server.js",
+    "console": "node console.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vandamm/TBQ-console.git"
+  },
+  "author": "Van Damm <evilgreedystalker@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vandamm/TBQ-console/issues"
+  },
+  "homepage": "https://github.com/vandamm/TBQ-console#readme",
+  "dependencies": {
+    "readline": "^1.3.0",
+    "tbq": "^0.1.0",
+    "body-parser": "^1.14.2",
+    "config": "^1.19.0",
+    "cookie-parser": "^1.4.1",
+    "express": "^4.13.3",
+    "uuid": "^2.0.1"   
+  }
+}
