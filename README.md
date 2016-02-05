@@ -1,6 +1,8 @@
-TBQ game runner example
+TBQ game example
 ====
-Can be run either in console, or in browser. Primary experience is intended to be in browser:
+A sample text-based quest based on [TBQ quest runner](https://github.com/vandamm/TBQ)
+
+Can be run either in console, or in browser:
 
 ```
 npm install
