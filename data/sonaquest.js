@@ -1,7 +1,7 @@
 /**
  * Game data
  */
-const char = require('tbq').character;
+const actions = require('tbq').actions;
 
 const photoBoothNames = ['экран', 'экрану', 'телефон', 'телефону', 'стенд', 'стенду', 'фотостенд', 'фотостенду', 'фото-стенд', 'фото-стенду'];
 const room1LockNames = ['замок', 'кодовый замок'];
@@ -19,14 +19,14 @@ module.exports = {
 
         closedDoor: {
           names: ['дверь', 'двери', 'вход', 'входу'],
-          actions: [char.$approach, char.$examine, char.$use],
+          actions: [actions.approach, actions.examine, actions.use],
           description: 'Я подошел ко входу в зал клуба. Дверь была закрыта.',
           details: 'Большая деревянная дверь с красивыми круглыми вырезами. Возле двери висит кодовый замок.',
           objects: {
 
             disabledLock: {
               names: room1LockNames,
-              actions: [char.$use, char.$examine],
+              actions: [actions.use, actions.examine],
               enabled: true,
               canBeCurrent: false,
               description: 'Кодовый замок обесточен. По крайней мере табло не горит и на нажатия кнопок он не реагирует.'
@@ -34,7 +34,7 @@ module.exports = {
 
             enabledLock: {
               names: room1LockNames,
-              actions: [char.$use, char.$examine],
+              actions: [actions.use, actions.examine],
               enabled: false,
               description: 'Кодовый замок нахально мигал мне в лицо красной лампочкой. Судя по всему, дисплей был рассчитан на код из 8 цифр: на сером подсвеченном табло горела надпись "ЗАКРЫТО".\n\nВведите код:',
               objects: {
@@ -63,7 +63,7 @@ module.exports = {
 
         openDoor: {
           names: ['дверь', 'двери', 'вход', 'входу', 'зал'],
-          actions: [char.$approach, char.$use, 'войти в (.*)'],
+          actions: [actions.approach, actions.use, 'войти в (.*)'],
           enabled: false,
           onActivate: function (game) {
             return game.changeRoom('room2');
@@ -72,21 +72,21 @@ module.exports = {
 
         photos: {
           names: ['картины', 'картинам', 'фотографии', 'фотографиям', 'фото', 'фотки', 'фоткам'],
-          actions: [char.$approach, char.$examine],
+          actions: [actions.approach, actions.examine],
           canBeCurrent: false,
           description: 'Я присмотрелся к картинам на стенах: их насчитывалось 7 штук. Это были фотографии диджея за работой, судя по всему, девушки. Она была в футуристическом костюме, который я где-то определенно видел. На фотографиях была подпись автора: явно кто-то гордился своей работой. Под подписью проглядывали даты туров: 14.03.2015, 30.05.2015, 16.13.2015, 11.07.2015, 30.08.2015.'
         },
 
         booth: {
           names: photoBoothNames,
-          actions: [char.$approach, char.$examine, char.$use],
+          actions: [actions.approach, actions.examine, actions.use],
           description: 'В конце коридора маячил стенд в форме телефона. Интересно, почему нельзя было поставить обычного фотографа? Я подошел к этому чуду современных технологий и ткнул пальцем в экран. Что-то мне подсказывало, что мне стоит сделать фотографию.',
           details: 'В конце коридора маячил стенд в форме телефона. Интересно, почему нельзя было поставить обычного фотографа? Я подошел к этому чуду современных технологий и ткнул пальцем в экран. Что-то мне подсказывало, что мне стоит сделать фотографию.',
           objects: {
 
             screen: {
               names: photoBoothNames,
-              actions: [char.$use, 'сфотографироваться', 'сделать фото', 'сделать фотографию'],
+              actions: [actions.use, 'сфотографироваться', 'сделать фото', 'сделать фотографию'],
               enabled: true,
               canBeCurrent: false,
               description: 'Морщась от головной боли, я еще раз ткнул в экран, пытаясь при этом изобразить улыбку. Слегка шурша бумагой, стенд выдал мне 4 фотографии: на одной из них стояло две печати со смутно знакомыми названиями - "ДЕМАСИЯ" и "НОКСУС". Города, что ли? Чертова головная боль, ничего не помню! Я поборол порыв выбросить фотографии и засунул их в карман. Свет в коридоре мигнул и засветился чуть ярче.\n\nВисящий на стене возле двери кодовый замок весело пискнул и на нем засветилась красная лампочка.',

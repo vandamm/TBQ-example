@@ -19,7 +19,7 @@
   "homepage": "https://github.com/vandamm/TBQ-console#readme",
   "dependencies": {
     "readline": "^1.3.0",
-    "tbq": "^0.1.0",
+    "tbq": "^0.2.0",
     "body-parser": "^1.14.2",
     "config": "^1.19.0",
     "cookie-parser": "^1.4.1",

@@ -6,7 +6,7 @@ const config = require('config');
 const TBQ = require('tbq');
 const data = require('./data/sonaquest');
 
-const quest = TBQ.createGame(data);
+const quest = TBQ.createGame(data, config.get('locale'));
 
 const rl = readline.createInterface(process.stdin, process.stdout);
 rl.setPrompt('>> ');
