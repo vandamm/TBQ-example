@@ -22,7 +22,7 @@
     "tbq": "^0.2.0",
     "body-parser": "^1.14.2",
     "config": "^2.0.0",
-    "cookie-parser": "^1.4.1",
+    "cookie-parser": "^1.4.4",
     "express": "^4.13.3",
     "uuid": "^3.0.0"   
   }
